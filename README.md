@@ -43,3 +43,9 @@ The model was trained on **Google Colab** using:
 The final model is saved as `garbage_classifier.h5` in the `/model` folder.
 
 ### Supported Classes:
+shoes
+trash
+white glass
+
+### Trained_Model_Link:
+https://colab.research.google.com/drive/1bWcOI0bAtcl-RNhpHCTmChenqAeX9mR4?usp=sharing
