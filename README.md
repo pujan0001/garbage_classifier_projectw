@@ -48,4 +48,4 @@ trash
 white glass
 
 ### Trained_Model_Link:
-https://colab.research.google.com/drive/1bWcOI0bAtcl-RNhpHCTmChenqAeX9mR4?usp=sharing
+https://colab.research.google.com/drive/1bczDeGkO8fJjPJHuDKraktZBdlxug6Df
