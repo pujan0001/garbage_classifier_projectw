@@ -1,83 +1,45 @@
-# 🗑️ Garbage Classifier (Recyclable vs Non-Recyclable)
+# 🗑️ Smart Garbage Classifier (Recycle vs Non-Recycle)
 
-A full-stack machine learning web application that classifies garbage images into 12 categories using a trained MobileNetV2 model.
+A full-stack ML-powered web app that identifies garbage types across 12 categories using a fine-tuned MobileNetV2 model.
 
-Built with:
-- **FastAPI** (backend & frontend)
-- **TensorFlow/Keras** (model training)
-- **Google OAuth 2.0** (authentication)
-- **SQLite + SQLModel** (token tracking database)
-- **OpenWeatherMap API** (real-time Air Quality Index)
+## 🔧 Built Using
 
----
-
-## ✨ Features
-
-✅ Upload an image → predicts the garbage class  
-✅ Google OAuth login system  
-✅ Each user starts with **1000 tokens** → **3 tokens deducted per prediction**  
-✅ Shows remaining tokens + prediction result  
-✅ Live **Air Quality Index (AQI)** bar from OpenWeatherMap  
-✅ Responsive frontend using Jinja2 templates
+- **FastAPI** for backend logic and template rendering  
+- **TensorFlow/Keras** for training the classification model  
+- **Google OAuth 2.0** for secure user authentication  
+- **SQLite with SQLModel** to manage user tokens  
+- **OpenWeatherMap API** to show live Air Quality Index (AQI)
 
 ---
 
+## 🌟 Key Features
 
-## 🔐 Authentication Setup
-
-1️⃣ Create Google OAuth 2.0 credentials in [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
-
-- Application Type: **Web Application**
-- Authorized redirect URI: http://localhost:8000/auth
-
----
-
-### 📝 Model Training
-The model was trained in Google Colab using:
-
-✅ MobileNetV2 (pretrained on ImageNet)
-✅ Data augmentation (zoom, rotation, etc.)
-✅ Dataset: mostafaabla/garbage-classification from KaggleHub
-
-Final model exported as garbage_classifier.h5 and placed under /model folder.
-
-12 classes: battery, biological, brown-glass, cardboard, clothes,
-green-glass, metal, paper, plastic, shoes, trash, white-glass
+- ✅ Upload an image and receive an instant garbage classification  
+- ✅ Secure login via Google OAuth  
+- ✅ Each user starts with **1000 tokens**, with **3 tokens used per prediction**  
+- ✅ Display of prediction results alongside token balance  
+- ✅ Real-time AQI display integrated into the UI  
+- ✅ Fully responsive frontend using Jinja2 and HTML/CSS  
 
 ---
 
-### 🔍 Class Prediction Flow
+## 🔐 Google OAuth Integration
 
-User uploads image
-
-FastAPI saves image temporarily
-
-Image is resized → normalized → passed to model
-
-Model predicts class index → maps to class name
-
-3 tokens deducted → result displayed
+1. Visit [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+2. Create new OAuth 2.0 credentials:
+   - **Application Type**: Web Application  
+   - **Authorized Redirect URI**: `http://localhost:8000/auth`
 
 ---
 
-### 📊 Air Quality Integration
+## 🧠 Model Overview
 
-Uses OpenWeatherMap Air Pollution API to fetch real-time AQI for a fixed location (customizable).
+The model was trained on **Google Colab** using:
 
-Displays AQI at top of every page.
+- ✅ **MobileNetV2** with ImageNet pre-trained weights  
+- ✅ Data augmentation: rotation, zoom, and more  
+- ✅ Dataset: [Garbage Classification Dataset](https://www.kaggle.com/datasets/mostafaabla/garbage-classification) via KaggleHub  
 
----
+The final model is saved as `garbage_classifier.h5` in the `/model` folder.
 
-### 🔑 Token System
-Each new user starts with 1000 tokens
-
-Each prediction deducts 3 tokens
-
-Remaining tokens displayed on dashboard and result page
-
-Token balance stored in SQLite (using SQLModel ORM)
-
----
-
-### Trained_Model_Link:
-https://colab.research.google.com/drive/1bWcOI0bAtcl-RNhpHCTmChenqAeX9mR4?usp=sharing
+### Supported Classes:
