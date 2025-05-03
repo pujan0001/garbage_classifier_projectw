@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+jinja2
+tensorflow
+pillow
+python-multipart
+requests
+python-dotenv
+authlib
+starlette
+itsdangerous
+httpx
